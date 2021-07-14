@@ -1,0 +1,5 @@
+repositories:
+  yaml-cpp:
+    type: git
+    url: https://gitee.com/zhenshenglee/yaml-cpp.git
+    tag: yaml-cpp-0.6.0
