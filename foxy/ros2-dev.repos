@@ -243,10 +243,14 @@ repositories:
     type: git
     url: https://hub.fastgit.org/ros2/python_cmake_module.git
     version: foxy
+  # ros2/rcl:
+  #   type: git
+  #   url: https://hub.fastgit.org/ros2/rcl.git
+  #   version: foxy
   ros2/rcl:
     type: git
-    url: https://hub.fastgit.org/ros2/rcl.git
-    version: foxy
+    url: https://hub.fastgit.org/irobot-ros/rcl.git
+    version: foxy-events-executor
   ros2/rcl_interfaces:
     type: git
     url: https://hub.fastgit.org/ros2/rcl_interfaces.git
@@ -255,10 +259,14 @@ repositories:
     type: git
     url: https://hub.fastgit.org/ros2/rcl_logging.git
     version: foxy
+  # ros2/rclcpp:
+  #   type: git
+  #   url: https://hub.fastgit.org/ros2/rclcpp.git
+  #   version: foxy
   ros2/rclcpp:
     type: git
-    url: https://hub.fastgit.org/ros2/rclcpp.git
-    version: foxy
+    url: https://hub.fastgit.org/irobot-ros/rclcpp.git
+    version: foxy-events-executor
   ros2/rclpy:
     type: git
     url: https://hub.fastgit.org/ros2/rclpy.git
@@ -275,10 +283,14 @@ repositories:
     type: git
     url: https://hub.fastgit.org/ros2/realtime_support.git
     version: foxy
+  # ros2/rmw:
+  #   type: git
+  #   url: https://hub.fastgit.org/ros2/rmw.git
+  #   version: foxy
   ros2/rmw:
     type: git
-    url: https://hub.fastgit.org/ros2/rmw.git
-    version: foxy
+    url: https://hub.fastgit.org/irobot-ros/rmw.git
+    version: foxy-events-executor
   # ros2/rmw_connext:
   #   type: git
   #   url: https://hub.fastgit.org/ros2/rmw_connext.git
@@ -291,14 +303,22 @@ repositories:
     type: git
     url: https://hub.fastgit.org/ros2/rmw_dds_common.git
     version: foxy
+  # ros2/rmw_fastrtps:
+  #   type: git
+  #   url: https://hub.fastgit.org/ros2/rmw_fastrtps.git
+  #   version: foxy
   ros2/rmw_fastrtps:
     type: git
-    url: https://hub.fastgit.org/ros2/rmw_fastrtps.git
-    version: foxy
+    url: https://hub.fastgit.org/irobot-ros/rmw_fastrtps.git
+    version: foxy-events-executor
+  # ros2/rmw_implementation:
+  #   type: git
+  #   url: https://hub.fastgit.org/ros2/rmw_implementation.git
+  #   version: foxy
   ros2/rmw_implementation:
     type: git
-    url: https://hub.fastgit.org/ros2/rmw_implementation.git
-    version: foxy
+    url: https://hub.fastgit.org/irobot-ros/rmw_implementation.git
+    version: foxy-events-executor
   # ros2/ros1_bridge:
   #   type: git
   #   url: https://hub.fastgit.org/ros2/ros1_bridge.git

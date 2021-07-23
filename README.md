@@ -9,6 +9,7 @@
 - internet is needed
 - replace `URL https://github.com` with `URL https://hub.fastgit.org` for connection issue.
 - `GIT_REPOSITORY https://github.com` with `GIT_REPOSITORY https://hub.fastgit.org`
+- `curl https://github.com` with `curl https://hub.fastgit.org`
 
 ```sh
 # install ROS packages
@@ -27,6 +28,15 @@ sudo apt-get install -y --no-install-recommends \
                         libcunit1-dev \
 # python3-rosdep， python3-rosinstall-generator与ros1有依赖问题
 
+# ecal
+sudo apt-get install git cmake doxygen graphviz build-essential \
+                    zlib1g-dev qt5-default libhdf5-dev libprotobuf-dev
+                    libprotoc-dev protobuf-compiler libcurl4-openssl-dev
+
+# for galactic cyclonedds
+sudo apt-get install -y --no-install-recommends \
+                        libbison-dev
+
 python3 -m pip install -U \
             argcomplete \
             flake8-blind-except \
@@ -43,14 +53,27 @@ python3 -m pip install -U \
 ```
 
 ```sh
+# installation is in /usr/local
+cd ./common
+vcs import src < common.repos
+# manually install iceoryx
+# manually install fastdds
+# manually install yaml-cpp
+```
+
+```sh
 cd ./foxy
-sudo ./build.sh
+vcs import src < ros2.repos
+# vcs import --force src < ./ros2-dev.repos
+sudo su
+./build.sh
+# install it into /opt/ros/
+ldconfig
 ```
 
 ## removed packages
 
 - connext and rmw
-- fastrtps and rmw
 - unneeded msgs
 - ros1 bridge
 - dummy, demo and example
@@ -59,9 +82,23 @@ sudo ./build.sh
 
 - ecal
 - iceoryx
+- image based pipline
+- pointcloud based pipline
+- cuda based pipline
 
-## todo
+## deployment
 
-- cross compile
-- deb deployment
-- docker deployment
+- docker based binary deployment
+
+## test
+
+```sh
+# optional choose rmw
+# export RMW_IMPLEMENTATION=rmw_iceoryx_cpp
+# export RMW_IMPLEMENTATION=rmw_ecal_dynamic_cpp
+# export RMW_IMPLEMENTATION=rmw_ecal_proto_cpp
+# export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+source /opt/ros/foxy-dev/setup.bash
+ros2 launch demo_nodes_cpp talker_listener.launch.py
+```

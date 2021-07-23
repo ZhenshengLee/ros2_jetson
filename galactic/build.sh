@@ -3,10 +3,10 @@
 # 检测是16.04还是18.04
 case "$(lsb_release -r | cut -f2)" in
     20.04)
-      GA_ROS_DISTRO="foxy-dev"
+      GA_ROS_DISTRO="galactic-dev"
       ;;
     18.04)
-    GA_ROS_DISTRO="foxy"
+    GA_ROS_DISTRO="galactic"
       ;;
     *)
     error "Unsupported ubuntu distro"
@@ -14,14 +14,14 @@ case "$(lsb_release -r | cut -f2)" in
     exit 1
 esac
 
-export ROS_DISTRO="foxy"
+export ROS_DISTRO="galactic"
 
 MACHINE_ARCH=$(uname -m)
 JOB_ARG="--parallel-workers 10"
 if [ "$MACHINE_ARCH" == 'aarch64' ]; then
   JOB_ARG="--parallel-workers 6"
 fi
-LOG_ARG=" --log-base $HOME/.colcon/log/$MACHINE_ARCH/$GA_ROS_DISTRO "
+LOG_ARG=" --log-base $HOMW/.colcon/log/$MACHINE_ARCH/$GA_ROS_DISTRO "
 COLCON_ARG=" --build-base $HOME/.colcon/build/$MACHINE_ARCH/$GA_ROS_DISTRO --install-base /opt/ros/$GA_ROS_DISTRO --merge-install"
 # COLCON_ARG=" --build-base ./colcon/build --install-base ./colcon/install --merge-install"
 CMAKE_OPT=" --cmake-args -DBUILD_TESTING=OFF "

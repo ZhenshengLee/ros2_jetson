@@ -5,5 +5,5 @@ repositories:
     version: master
   ecal/rosidl_typesupport_protobuf:
     type: git
-    url: https://hub.fastgit.org/continental/rosidl_typesupport_protobuf.git
-    version: hotfix/older_protobuf
+    url: https://hub.fastgit.org/ZhenshengLee/rosidl_typesupport_protobuf.git
+    version: master

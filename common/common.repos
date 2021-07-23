@@ -3,3 +3,41 @@ repositories:
     type: git
     url: https://gitee.com/zhenshenglee/yaml-cpp.git
     tag: yaml-cpp-0.6.0
+  eProsima/Fast-CDR:
+    type: git
+    url: https://hub.fastgit.org/eProsima/Fast-CDR.git
+    version: master
+  eProsima/Fast-DDS:
+    type: git
+    url: https://hub.fastgit.org/eProsima/Fast-DDS.git
+    version: master
+  eProsima/foonathan_memory_vendor:
+    type: git
+    url: https://hub.fastgit.org/eProsima/foonathan_memory_vendor.git
+    version: master
+  eProsima/foonathan_memory:
+    type: git
+    url: https://hub.fastgit.org/foonathan/memory.git
+    version: main
+  # cmake .. -DFOONATHAN_MEMORY_BUILD_TESTS=OFF -DFOONATHAN_MEMORY_BUILD_EXAMPLES=OFF
+  # sudo cmake --build . --target install
+  eclipse-iceoryx/iceoryx:
+    type: git
+    url: https://hub.fastgit.org/ZhenshengLee/iceoryx.git
+    version: release_1.0
+  # cmake -Bbuild -Hiceoryx_meta -DBUILD_ALL=1
+  # cmake --build build  -j10
+  # sudo cmake --build build --target install
+  # ecal/ecal-fat:
+  #   type: tar
+  #   url: https://hub.fastgit.org/continental/ecal/releases/download/v5.8.12/ecal-fat-source.tar.gz
+  # thirdparty with ecal master branch, not with that fat source branch
+  ecal/ecal:
+    type: git
+    url: https://hub.fastgit.org/continental/ecal.git
+    version: master
+    # 99368de
+  # 5.8.12 with iceoryx layer
+  # cmake .. -DCMAKE_BUILD_TYPE=Release -DECAL_THIRDPARTY_BUILD_PROTOBUF=OFF -DECAL_THIRDPARTY_BUILD_CURL=OFF -DECAL_THIRDPARTY_BUILD_HDF5=OFF -DECAL_LAYER_ICEORYX=ON
+  # cpack -G DEB
+  # sudo dpkg -i _deploy/eCAL-*
