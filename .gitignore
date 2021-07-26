@@ -3,3 +3,5 @@ install/
 log/
 colcon/
 common/src
+.dev_bash_hist
+*.tar.gz

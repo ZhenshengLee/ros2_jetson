@@ -20,14 +20,18 @@ repositories:
     url: https://hub.fastgit.org/foonathan/memory.git
     version: main
   # cmake .. -DFOONATHAN_MEMORY_BUILD_TESTS=OFF -DFOONATHAN_MEMORY_BUILD_EXAMPLES=OFF
-  # sudo cmake --build . --target install
+  # sudo cmake --build . --target install -j10
   eclipse-iceoryx/iceoryx:
     type: git
     url: https://hub.fastgit.org/ZhenshengLee/iceoryx.git
     version: release_1.0
+  eclipse-iceoryx/cpptoml:
+    type: git
+    url: https://hub.fastgit.org/skystrife/cpptoml.git
+    version: v0.1.1
   # cmake -Bbuild -Hiceoryx_meta -DBUILD_ALL=1
   # cmake --build build  -j10
-  # sudo cmake --build build --target install
+  # sudo cmake --build build --target install -j10
   # ecal/ecal-fat:
   #   type: tar
   #   url: https://hub.fastgit.org/continental/ecal/releases/download/v5.8.12/ecal-fat-source.tar.gz
@@ -41,3 +45,6 @@ repositories:
   # cmake .. -DCMAKE_BUILD_TYPE=Release -DECAL_THIRDPARTY_BUILD_PROTOBUF=OFF -DECAL_THIRDPARTY_BUILD_CURL=OFF -DECAL_THIRDPARTY_BUILD_HDF5=OFF -DECAL_LAYER_ICEORYX=ON
   # cpack -G DEB
   # sudo dpkg -i _deploy/eCAL-*
+  cmake:
+    type: tar
+    url: https://hub.fastgit.org/Kitware/CMake/releases/download/v3.18.6/cmake-3.18.6.tar.gz

@@ -7,9 +7,8 @@
 ## setup
 
 - internet is needed
-- replace `URL https://github.com` with `URL https://hub.fastgit.org` for connection issue.
-- `GIT_REPOSITORY https://github.com` with `GIT_REPOSITORY https://hub.fastgit.org`
-- `curl https://github.com` with `curl https://hub.fastgit.org`
+
+### install debs
 
 ```sh
 # install ROS packages
@@ -30,8 +29,8 @@ sudo apt-get install -y --no-install-recommends \
 
 # ecal
 sudo apt-get install git cmake doxygen graphviz build-essential \
-                    zlib1g-dev qt5-default libhdf5-dev libprotobuf-dev
-                    libprotoc-dev protobuf-compiler libcurl4-openssl-dev
+                    zlib1g-dev qt5-default libhdf5-dev libprotobuf-dev \
+                    libprotoc-dev protobuf-compiler libcurl4-openssl-dev \
 
 # for galactic cyclonedds
 sudo apt-get install -y --no-install-recommends \
@@ -51,6 +50,13 @@ python3 -m pip install -U \
             pytest-rerunfailures \
             pytest
 ```
+
+### patch and compile
+
+- replace `URL https://github.com` with `URL https://hub.fastgit.org` for connection issue.
+- `GIT_REPOSITORY https://github.com` with `GIT_REPOSITORY https://hub.fastgit.org`
+- `curl https://github.com` with `curl https://hub.fastgit.org`
+-
 
 ```sh
 # installation is in /usr/local
@@ -90,6 +96,45 @@ ldconfig
 
 - docker based binary deployment
 
+```sh
+# 1. build docker image based on original image by nvidia
+./build_docker.sh
+
+# 2. docker into this container with root
+./docker_jetson_into_root.sh
+# and install sudo and lsb-release
+sed -i 's/ports.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list
+apt update && apt upgrade -y
+apt install sudo lsb-release -y
+# optinal apt clean all
+
+# 3. build ros2_dep
+# upgrade your cmake to 3.18.2
+# following guides in install_ros2_dep.sh
+
+# 4. export to a new image
+docker export 31bccc730393 > ga_jetson_r32.4.4_zs.tar
+
+# 5. reuse the new image
+docker import ga_jetson_r32.4.4_zs.tar ga_jetson_r32.4.4:dep
+./jetson_start.sh
+./jetson_into.sh
+
+# 6. use the new image to build ros2 binary
+sudo su
+./build.sh
+
+# 7. tar and copy the binary to host
+sudo su
+./package.sh
+```
+
+note:
+
+- docker container is sharing `/root/.colcon/` with host, so colcon build files are not in the image.
+- while `/opt/` is the private folder of container.
+- the ros2 cannot be run in this docker container but canbe run in the jetson target.
+
 ## test
 
 ```sh
@@ -102,3 +147,7 @@ export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 source /opt/ros/foxy-dev/setup.bash
 ros2 launch demo_nodes_cpp talker_listener.launch.py
 ```
+
+## build-farm
+
+You can cross-compile certain packages in `build_farm` with `ga_ros.sh`.

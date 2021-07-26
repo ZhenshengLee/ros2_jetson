@@ -26,9 +26,10 @@ COLCON_ARG=" --build-base $HOME/.colcon/build/$MACHINE_ARCH/$GA_ROS_DISTRO --ins
 # COLCON_ARG=" --build-base ./colcon/build --install-base ./colcon/install --merge-install"
 CMAKE_OPT=" --cmake-args -DBUILD_TESTING=OFF "
 
-echo "rm -rf /opt/ros/$GA_ROS_DISTRO"
-rm -rf /opt/ros/$GA_ROS_DISTRO
+# echo "rm -rf /opt/ros/$GA_ROS_DISTRO"
+# rm -rf /opt/ros/$GA_ROS_DISTRO
 
 echo "colcon ${LOG_ARG} build ${COLCON_ARG}   ${JOB_ARG}  ${CMAKE_OPT} -DCMAKE_BUILD_TYPE=Release"
 colcon ${LOG_ARG} build ${COLCON_ARG}   ${JOB_ARG} ${CMAKE_OPT} -DCMAKE_BUILD_TYPE=Release
+# --cmake-force-configure
 # colcon ${LOG_ARG} build ${COLCON_ARG}   ${JOB_ARG} ${CMAKE_OPT} -DCMAKE_BUILD_TYPE=Release
