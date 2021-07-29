@@ -38,7 +38,7 @@ repositories:
   # thirdparty with ecal master branch, not with that fat source branch
   ecal/ecal:
     type: git
-    url: https://hub.fastgit.org/continental/ecal.git
+    url: https://hub.fastgit.org/ZhenshengLee/ecal.git
     version: master
     # 99368de
   # 5.8.12 with iceoryx layer

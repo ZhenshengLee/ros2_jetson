@@ -74,6 +74,11 @@ python3 -m pip install -U \
 		lark_parser \
         -i  https://pypi.tuna.tsinghua.edu.cn/simple
 
+# for galactic
+python3 -m pip install -U \
+		importlib-resources  \
+        -i  https://pypi.tuna.tsinghua.edu.cn/simple
+
 # ecal
 apt-get install git cmake doxygen graphviz build-essential \
                     zlib1g-dev qt5-default libhdf5-dev libprotobuf-dev \

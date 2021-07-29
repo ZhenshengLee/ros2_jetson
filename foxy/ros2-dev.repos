@@ -342,7 +342,7 @@ repositories:
   ros2/rosidl:
     type: git
     url: https://hub.fastgit.org/ros2/rosidl.git
-    version: foxy
+    version: galactic
   ros2/rosidl_dds:
     type: git
     url: https://hub.fastgit.org/ros2/rosidl_dds.git
