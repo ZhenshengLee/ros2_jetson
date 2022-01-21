@@ -1,0 +1,17 @@
+repositories:
+  ros-visualization/rqt_tf_tree:
+    type: git
+    url: https://github.com.cnpmjs.org/ros-visualization/rqt_tf_tree.git
+    version: dashing-devel
+  ros/angles:
+    type: git
+    url: https://github.com.cnpmjs.org/ros/angles.git
+    version: galactic-devel
+  ros/xacro:
+    type: git
+    url: https://github.com.cnpmjs.org/ros/xacro.git
+    version: ros2
+  ros/joint_state_publisher:
+    type: git
+    url: https://github.com.cnpmjs.org/ros/joint_state_publisher.git
+    version: galactic

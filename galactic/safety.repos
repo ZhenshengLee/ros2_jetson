@@ -1,0 +1,14 @@
+repositories:
+  # robosoft-ai/SMACC2:
+  #   type: git
+  #   url: https://github.com.cnpmjs.org/robosoft-ai/SMACC2.git
+  #   version: galactic
+  ros/diagnostics:
+    type: git
+    url: https://github.com.cnpmjs.org/ros/diagnostics.git
+    version: ros2-devel
+    # delete self-test
+  ApexAI/performance_test:
+    type: git
+    url: https://github.com.cnpmjs.org/ZhenshengLee/performance_test.git
+    version: master

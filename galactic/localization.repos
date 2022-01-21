@@ -1,0 +1,5 @@
+repositories:
+  ros-drivers/nmea_msgs:
+    type: git
+    url: https://github.com.cnpmjs.org/ros-drivers/nmea_msgs.git
+    version: ros2

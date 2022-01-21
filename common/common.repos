@@ -1,45 +1,49 @@
 repositories:
   yaml-cpp:
     type: git
-    url: https://gitee.com/zhenshenglee/yaml-cpp.git
-    tag: yaml-cpp-0.6.0
-  eProsima/Fast-CDR:
-    type: git
-    url: https://hub.fastgit.org/eProsima/Fast-CDR.git
-    version: master
-  eProsima/Fast-DDS:
-    type: git
-    url: https://hub.fastgit.org/eProsima/Fast-DDS.git
-    version: master
-  eProsima/foonathan_memory_vendor:
-    type: git
-    url: https://hub.fastgit.org/eProsima/foonathan_memory_vendor.git
-    version: master
-  eProsima/foonathan_memory:
-    type: git
-    url: https://hub.fastgit.org/foonathan/memory.git
-    version: main
+    url: https://github.com.cnpmjs.org/jbeder/yaml-cpp.git
+    version: 9a36242
+  # 0.6.3
+  # cmake .. -DCMAKE_BUILD_TYPE=Release -DYAML_BUILD_SHARED_LIBS=ON -DYAML_CPP_BUILD_TESTS=OFF -DYAML_CPP_BUILD_TOOLS=OFF -DYAML_CPP_BUILD_CONTRIB=OFF
+  # make -j8
+  # sudo make install
+  # eProsima/Fast-CDR:
+  #   type: git
+  #   url: https://github.com.cnpmjs.org/eProsima/Fast-CDR.git
+  #   version: master
+  # eProsima/Fast-DDS:
+  #   type: git
+  #   url: https://github.com.cnpmjs.org/eProsima/Fast-DDS.git
+  #   version: master
+  # eProsima/foonathan_memory_vendor:
+  #   type: git
+  #   url: https://github.com.cnpmjs.org/eProsima/foonathan_memory_vendor.git
+  #   version: master
+  # eProsima/foonathan_memory:
+  #   type: git
+  #   url: https://github.com.cnpmjs.org/foonathan/memory.git
+  #   version: main
   # cmake .. -DFOONATHAN_MEMORY_BUILD_TESTS=OFF -DFOONATHAN_MEMORY_BUILD_EXAMPLES=OFF
   # sudo cmake --build . --target install -j10
   eclipse-iceoryx/iceoryx:
     type: git
-    url: https://hub.fastgit.org/ZhenshengLee/iceoryx.git
+    url: https://github.com.cnpmjs.org/ZhenshengLee/iceoryx.git
     version: release_1.0
   eclipse-iceoryx/cpptoml:
     type: git
-    url: https://hub.fastgit.org/skystrife/cpptoml.git
+    url: https://github.com.cnpmjs.org/skystrife/cpptoml.git
     version: v0.1.1
   # cmake -Bbuild -Hiceoryx_meta -DBUILD_ALL=1
   # cmake --build build  -j10
   # sudo cmake --build build --target install -j10
   # ecal/ecal-fat:
   #   type: tar
-  #   url: https://hub.fastgit.org/continental/ecal/releases/download/v5.8.12/ecal-fat-source.tar.gz
+  #   url: https://github.com.cnpmjs.org/continental/ecal/releases/download/v5.9.2/ecal-fat-source.tar.gz
   # thirdparty with ecal master branch, not with that fat source branch
-  ecal/ecal:
-    type: git
-    url: https://hub.fastgit.org/ZhenshengLee/ecal.git
-    version: master
+  # ecal/ecal:
+  #   type: git
+  #   url: https://github.com.cnpmjs.org/ZhenshengLee/ecal.git
+  #   version: master
     # 99368de
   # 5.8.12 with iceoryx layer
   # cmake .. -DCMAKE_BUILD_TYPE=Release -DECAL_THIRDPARTY_BUILD_PROTOBUF=OFF -DECAL_THIRDPARTY_BUILD_CURL=OFF -DECAL_THIRDPARTY_BUILD_HDF5=OFF -DECAL_LAYER_ICEORYX=ON
@@ -47,4 +51,4 @@ repositories:
   # sudo dpkg -i _deploy/eCAL-*
   cmake:
     type: tar
-    url: https://hub.fastgit.org/Kitware/CMake/releases/download/v3.18.6/cmake-3.18.6.tar.gz
+    url: https://github.com.cnpmjs.org/Kitware/CMake/releases/download/v3.18.6/cmake-3.18.6.tar.gz

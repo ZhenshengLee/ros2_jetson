@@ -1,0 +1,34 @@
+repositories:
+  ros-controls/ros2_control:
+    type: git
+    url: https://github.com.cnpmjs.org/ros-controls/ros2_control.git
+    version: foxy
+  ros-controls/ros2_controllers:
+    type: git
+    url: https://github.com.cnpmjs.org/ros-controls/ros2_controllers.git
+    version: foxy
+  ros-controls/control_msgs:
+    type: git
+    url: https://github.com.cnpmjs.org/ros-controls/control_msgs.git
+    version: galactic-devel
+  ros-controls/realtime_tools:
+    type: git
+    url: https://github.com.cnpmjs.org/ros-controls/realtime_tools.git
+    version: ros2_devel
+  ros-controls/control_toolbox:
+    type: git
+    url: https://github.com.cnpmjs.org/ros-controls/control_toolbox.git
+    version: ros2-master
+  # ros-simulation/gazebo_ros2_control:
+  #   type: git
+  #   url: https://github.com.cnpmjs.org/ros-simulation/gazebo_ros2_control.git
+  #   version: galactic
+  # ros-simulation/gazebo_ros_pkgs:
+  #   type: git
+  #   url: https://github.com.cnpmjs.org/ros-simulation/gazebo_ros_pkgs.git
+  #   version: galactic
+  # ANYbotics/grid_map:
+  #   type: git
+  #   url: https://github.com.cnpmjs.org/ANYbotics/grid_map.git
+  #   version: foxy-devel
+  # compile error with eigen
