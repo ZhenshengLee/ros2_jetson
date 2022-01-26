@@ -15,6 +15,11 @@ sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture)] http://mirrors.tuna.ts
 sudo apt update
 sudo apt install ros-dashing-desktop
 
+```
+
+## install debs
+
+```sh
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends \
         curl \
@@ -32,26 +37,24 @@ sudo apt-get install -y --no-install-recommends \
         libfreetype6-dev \
         libogre-1.9-dev \
         lttng-tools lttng-modules-dkms liblttng-ust-dev \
-```
+        libasio-dev \
+        libtinyxml2-dev \
+        libcunit1-dev \
+        rapidjson-dev \
+        libtclap-dev \
 
-## install debs
-
-```sh
-# install ROS packages
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends \
                         libbullet-dev \
                         libpython3-dev \
                         python3-colcon-common-extensions \
+                        python3-colcon-mixin \
                         python3-flake8 \
                         python3-pip \
                         python3-pytest-cov \
                         python3-setuptools \
                         python3-vcstool \
-                        libasio-dev \
-                        libtinyxml2-dev \
-                        libcunit1-dev \
-                        rapidjson-dev \
+
 # python3-rosdep， python3-rosinstall-generator与ros1有依赖问题
 
 # ecal
@@ -70,6 +73,13 @@ sudo apt-get install lttng-tools lttng-modules-dkms liblttng-ust-dev python3-ltt
 
 sudo usermod -aG tracing $USER
 reboot
+```
+
+# install python deps
+
+```sh
+# upgrade your pip
+sudo -H python3 -m pip install --upgrade --force pip
 
 sudo -H python3 -m pip install -U \
             argcomplete \
@@ -84,12 +94,12 @@ sudo -H python3 -m pip install -U \
             pytest-repeat \
             pytest-rerunfailures \
             pytest \
+            lark_parser \
+            sip \
+            numpy \
+            ifcfg \
+            netifaces \
             -i  https://pypi.tuna.tsinghua.edu.cn/simple \
-
-sudo -H python3 -m pip install -U \
-        sip  \
-        lark_parser \
-        -i  https://pypi.tuna.tsinghua.edu.cn/simple
 
 # for galactic
 sudo -H python3 -m pip install -U \
@@ -114,6 +124,11 @@ vcs import src < common.repos
 - replace `URL https://github.com` with `URL https://github.com.cnpmjs.org` for connection issue.
 - `GIT_REPOSITORY https://github.com` with `GIT_REPOSITORY https://github.com.cnpmjs.org`
 - `curl https://github.com` with `curl https://github.com.cnpmjs.org`
+
+```sh
+sed -i "s/github.com/github.com.cnpmjs.org/g" `grep github.com -rl * .*`
+sed -i "s/raw.githubusercontent.com/raw.github.com.cnpmjs.org/g" `grep raw.githubusercontent.com -rl * .*`
+```
 
 for foxy release
 
@@ -231,29 +246,43 @@ note:
 - while `/opt/` is the private folder of container.
 - the ros2 cannot be run in this docker container but canbe run in the jetson target.
 
-## test
+## smoke test
 
 ```sh
+cp ./cyclonedds.xml ~/
+
 # export ENV with custom ros2
 export ROS_DOMAIN_ID=42
 export ROS_VERSION=2
 export ROS_PYTHON_VERSION=3
 export ROS_DISTRO=galactic
-
-# optional choose rmw
-# export RMW_IMPLEMENTATION=rmw_iceoryx_cpp
-# export RMW_IMPLEMENTATION=rmw_ecal_dynamic_cpp
-# export RMW_IMPLEMENTATION=rmw_ecal_proto_cpp
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-# export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
-# if in 20.04
-source /opt/ros/galactic-dev/setup.bash
+export ROS_LOCALHOST_ONLY=1
+export CYCLONEDDS_URI=file:///$HOME/cyclonedds.xml
 # if in 18.04
 source /opt/ros/galactic/setup.bash
+# if in 20.04
+source /opt/ros/galactic-dev/setup.bash
+
 # rm -rf /opt/ros/galactic and rebuild if encounter any source issues
+ros2 run demo_nodes_cpp talker
 ros2 launch demo_nodes_cpp talker_listener.launch.py
+ros2 node list
+# ros2 daemon stop/start
+ros2 topic echo
+rqt_graph
+rviz2
+ros2 bag record -a
 ```
+
+## unresolved issues
+
+see this [rqt stuck issue](https://github.com/ZhenshengLee/ros2_jetson/issues/6)
 
 ## build-farm
 
 You can cross-compile certain packages in `build_farm` with `ga_ros.sh`.
+
+## references
+
+[cyberdog_ros2_wiki](https://github.com/MiRoboticsLab/cyberdog_ros2/wiki/%E4%BB%8E%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85ROS-2-%7C-Building-ROS-2-from-source#2%E6%9B%B4%E6%96%B0ubuntu%E6%BA%90)

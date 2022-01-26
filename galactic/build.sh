@@ -14,6 +14,8 @@ case "$(lsb_release -r | cut -f2)" in
     exit 1
 esac
 
+export OPENBLAS_CORETYPE=ARMV8
+export ROS_VERSION=2
 export ROS_DISTRO="galactic"
 
 MACHINE_ARCH=$(uname -m)
