@@ -8,7 +8,7 @@ repositories:
     url: https://github.com.cnpmjs.org/ros/diagnostics.git
     version: ros2-devel
     # delete self-test
-  ApexAI/performance_test:
-    type: git
-    url: https://github.com.cnpmjs.org/ZhenshengLee/performance_test.git
-    version: master
+  # ApexAI/performance_test:
+  #   type: git
+  #   url: https://github.com.cnpmjs.org/ZhenshengLee/performance_test.git
+  #   version: outdoor/master
