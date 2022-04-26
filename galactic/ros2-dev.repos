@@ -41,8 +41,8 @@ repositories:
   #   version: master
   eclipse-cyclonedds/cyclonedds:
     type: git
-    url: https://github.com.cnpmjs.org/eclipse-cyclonedds/cyclonedds.git
-    version: releases/0.8.x
+    url: https://hub.fastgit.xyz/ros2middleware/cyclonedds.git
+    version: outdoor/0.8.x
   # eclipse-iceoryx/iceoryx:
   #   type: git
   #   url: https://github.com.cnpmjs.org/eclipse-iceoryx/iceoryx.git
@@ -73,8 +73,8 @@ repositories:
     version: galactic
   ros-tracing/ros2_tracing:
     type: git
-    url: https://gitlab.com/ros-tracing/ros2_tracing.git
-    version: galactic
+    url: https://hub.fastgit.xyz/ZhenshengLee/ros2_tracing.git
+    version: outdoor/galactic
   ros-visualization/interactive_markers:
     type: git
     url: https://github.com.cnpmjs.org/ros-visualization/interactive_markers.git
@@ -258,8 +258,8 @@ repositories:
     version: galactic
   ros2/rcl:
     type: git
-    url: https://github.com.cnpmjs.org/ros2/rcl.git
-    version: galactic
+    url: https://hub.fastgit.xyz/ros2middleware/rcl.git
+    version: outdoor/galactic
   ros2/rcl_interfaces:
     type: git
     url: https://github.com.cnpmjs.org/ros2/rcl_interfaces.git
@@ -270,8 +270,8 @@ repositories:
     version: galactic
   ros2/rclcpp:
     type: git
-    url: https://github.com.cnpmjs.org/ros2/rclcpp.git
-    version: galactic
+    url: https://hub.fastgit.xyz/ros2middleware/rclcpp.git
+    version: outdoor/galactic
   ros2/rclpy:
     type: git
     url: https://github.com.cnpmjs.org/ros2/rclpy.git
@@ -298,8 +298,8 @@ repositories:
   #   version: galactic
   ros2/rmw_cyclonedds:
     type: git
-    url: https://github.com.cnpmjs.org/ros2/rmw_cyclonedds.git
-    version: galactic
+    url: https://hub.fastgit.xyz/ros2middleware/rmw_cyclonedds.git
+    version: outdoor/galactic
   ros2/rmw_dds_common:
     type: git
     url: https://github.com.cnpmjs.org/ros2/rmw_dds_common.git

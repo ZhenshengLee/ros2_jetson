@@ -176,6 +176,29 @@ tar -zcvf  ./build-cache-x86-galactic.tar.gz $HOME/.colcon/build/x86_64/galactic
 tar -zcvf  ./build-cache-aarch64-galactic.tar.gz $HOME/.colcon/build/aarch64/galactic/
 ```
 
+## update and compile
+
+- replace `github.com.cnpmjs.org` with `hub.fastgit.xyz`
+- replace `github.com.cnpmjs.org` with `ghproxy.com/https://`
+
+```sh
+# update the code
+vcs-pull src < ./ros2-dev.repos
+vcs-pull src < ./basic.repos
+vcs-pull src < ./localization.repos
+vcs-pull src < ./perception.repos
+vcs-pull src < ./planning.repos
+vcs-pull src < ./safety.repos
+```
+
+```sh
+# rm installed
+rm -rf /opt/ros/galactic-dev/
+# selective rm updated packages
+rm -rf ~/.colcon/build/x86_64/galactic-dev/tracetools*
+rm -rf ~/.colcon/build/x86_64/galactic-dev/ros2trace/
+```
+
 ## compile with cache
 
 **first you should install ros2-dashing, debs and compile some deps**
