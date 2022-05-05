@@ -304,10 +304,14 @@ repositories:
     type: git
     url: https://github.com.cnpmjs.org/ros2/rmw_dds_common.git
     version: galactic
-  # ros2/rmw_fastrtps:
-  #   type: git
-  #   url: https://github.com.cnpmjs.org/ros2/rmw_fastrtps.git
-  #   version: galactic
+  ros2/rmw_fastrtps:
+    type: git
+    url: https://ghproxy.com/https://github.com/ros2middleware/rmw_fastrtps.git
+    version: outdoor/galactic
+  ros2/rmw_ecal:
+    type: git
+    url: https://ghproxy.com/https://github.com/ros2middleware/rmw_ecal.git
+    version: outdoor/master
   ros2/rmw_implementation:
     type: git
     url: https://github.com.cnpmjs.org/ros2/rmw_implementation.git
@@ -356,10 +360,10 @@ repositories:
     type: git
     url: https://github.com.cnpmjs.org/ros2/rosidl_typesupport.git
     version: galactic
-  # ros2/rosidl_typesupport_fastrtps:
-  #   type: git
-  #   url: https://github.com.cnpmjs.org/ros2/rosidl_typesupport_fastrtps.git
-  #   version: galactic
+  ros2/rosidl_typesupport_fastrtps:
+    type: git
+    url: https://ghproxy.com/https://github.com/ros2/rosidl_typesupport_fastrtps.git
+    version: galactic
   ros2/rpyutils:
     type: git
     url: https://github.com.cnpmjs.org/ros2/rpyutils.git

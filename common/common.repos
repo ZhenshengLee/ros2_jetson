@@ -1,54 +1,69 @@
 repositories:
   yaml-cpp:
     type: git
-    url: https://github.com.cnpmjs.org/jbeder/yaml-cpp.git
+    url: https://ghproxy.com/https://github.com/jbeder/yaml-cpp.git
     version: 9a36242
   # 0.6.3
   # cmake .. -DCMAKE_BUILD_TYPE=Release -DYAML_BUILD_SHARED_LIBS=ON -DYAML_CPP_BUILD_TESTS=OFF -DYAML_CPP_BUILD_TOOLS=OFF -DYAML_CPP_BUILD_CONTRIB=OFF
   # make -j8
   # sudo make install
-  # eProsima/Fast-CDR:
-  #   type: git
-  #   url: https://github.com.cnpmjs.org/eProsima/Fast-CDR.git
-  #   version: master
-  # eProsima/Fast-DDS:
-  #   type: git
-  #   url: https://github.com.cnpmjs.org/eProsima/Fast-DDS.git
-  #   version: master
+  eProsima/Fast-CDR:
+    type: git
+    url: https://ghproxy.com/https://github.com/eProsima/Fast-CDR.git
+    version: master
+  # cmake ..
+  # make -j
+  # sudo make install
+  eProsima/Fast-DDS:
+    type: git
+    url: https://ghproxy.com/https://github.com/eProsima/Fast-DDS.git
+    version: outdoor/2.3.x
+  # cmake .. -DSECURITY=ON -DCOMPILE_EXAMPLES=ON
+  # make -j
+  # sudo make install
   # eProsima/foonathan_memory_vendor:
   #   type: git
-  #   url: https://github.com.cnpmjs.org/eProsima/foonathan_memory_vendor.git
+  #   url: https://ghproxy.com/https://github.com/eProsima/foonathan_memory_vendor.git
   #   version: master
-  # eProsima/foonathan_memory:
-  #   type: git
-  #   url: https://github.com.cnpmjs.org/foonathan/memory.git
-  #   version: main
+  eProsima/Fast-DDS-Gen:
+    type: git
+    url: https://ghproxy.com/https://github.com/eProsima/Fast-DDS-Gen.git
+    version: v2.1.2
+  # sudo apt install gradle default-jdk
+  # ./gradlew build
+  # copy Fast-DDS-Gen/share/fastddsgen/java/fastddsgen.jar
+  # copy Fast-DDS-Gen/scripts/fastddsgen
+  eProsima/foonathan_memory:
+    type: git
+    url: https://ghproxy.com/https://github.com/foonathan/memory.git
+    version: main
   # cmake .. -DFOONATHAN_MEMORY_BUILD_TESTS=OFF -DFOONATHAN_MEMORY_BUILD_EXAMPLES=OFF
   # sudo cmake --build . --target install -j10
   eclipse-iceoryx/iceoryx:
     type: git
-    url: https://github.com.cnpmjs.org/ZhenshengLee/iceoryx.git
-    version: release_1.0
-  eclipse-iceoryx/cpptoml:
-    type: git
-    url: https://github.com.cnpmjs.org/skystrife/cpptoml.git
-    version: v0.1.1
+    url: https://ghproxy.com/https://github.com/ros2middleware/iceoryx.git
+    version: outdoor/release_1.0
   # cmake -Bbuild -Hiceoryx_meta -DBUILD_ALL=1
   # cmake --build build  -j10
   # sudo cmake --build build --target install -j10
+  eclipse-iceoryx/cpptoml:
+    type: git
+    url: https://ghproxy.com/https://github.com/skystrife/cpptoml.git
+    version: v0.1.1
   # ecal/ecal-fat:
   #   type: tar
-  #   url: https://github.com.cnpmjs.org/continental/ecal/releases/download/v5.9.2/ecal-fat-source.tar.gz
-  # thirdparty with ecal master branch, not with that fat source branch
+  #   url: https://ghproxy.com/https://github.com/continental/ecal/releases/download/v5.10.0/ecal-fat-source.tar.gz
   # ecal/ecal:
   #   type: git
-  #   url: https://github.com.cnpmjs.org/ZhenshengLee/ecal.git
+  #   url: https://ghproxy.com/https://github.com/ZhenshengLee/ecal.git
   #   version: master
     # 99368de
-  # 5.8.12 with iceoryx layer
+  # 5.10.0 default layer(without iceoryx)
+  # cmake .. -DCMAKE_BUILD_TYPE=Release -DECAL_THIRDPARTY_BUILD_PROTOBUF=OFF -DECAL_THIRDPARTY_BUILD_CURL=OFF -DECAL_THIRDPARTY_BUILD_HDF5=OFF
+  # (optional) with iceoryx layer
   # cmake .. -DCMAKE_BUILD_TYPE=Release -DECAL_THIRDPARTY_BUILD_PROTOBUF=OFF -DECAL_THIRDPARTY_BUILD_CURL=OFF -DECAL_THIRDPARTY_BUILD_HDF5=OFF -DECAL_LAYER_ICEORYX=ON
   # cpack -G DEB
   # sudo dpkg -i _deploy/eCAL-*
   cmake:
     type: tar
-    url: https://github.com.cnpmjs.org/Kitware/CMake/releases/download/v3.18.6/cmake-3.18.6.tar.gz
+    url: https://ghproxy.com/https://github.com/Kitware/CMake/releases/download/v3.18.6/cmake-3.18.6.tar.gz

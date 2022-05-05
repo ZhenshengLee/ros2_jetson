@@ -58,9 +58,12 @@ sudo apt-get install -y --no-install-recommends \
 # python3-rosdep， python3-rosinstall-generator与ros1有依赖问题
 
 # ecal
+# note: compile eCAL in jetson due to the protobuf issue!
 sudo apt-get install git cmake doxygen graphviz build-essential \
                     zlib1g-dev qt5-default libhdf5-dev libprotobuf-dev \
                     libprotoc-dev protobuf-compiler libcurl4-openssl-dev \
+sudo add-apt-repository ppa:ecal/ecal-5.10
+sudo apt install ecal
 
 # for galactic cyclonedds
 sudo apt-get install -y bison libbison-dev
@@ -116,7 +119,8 @@ vcs import src < common.repos
 # manually install yaml-cpp
 # install cpp-toml
 # manually install iceoryx
-~~# manually install fastdds~~
+# (optional)manually install fastdds
+# (optional)manually install ecal
 ```
 
 ## patch and compile
@@ -274,18 +278,29 @@ note:
 ```sh
 cp ./cyclonedds.xml ~/
 
+# if in jetson
+export OPENBLAS_CORETYPE=ARMV8
 # export ENV with custom ros2
 export ROS_DOMAIN_ID=42
 export ROS_VERSION=2
 export ROS_PYTHON_VERSION=3
 export ROS_DISTRO=galactic
+export ROS_TRACE_DIR=${HOME}/.ros/tracing/
+# export ros2 rmw settings
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export ROS_LOCALHOST_ONLY=1
 export CYCLONEDDS_URI=file:///$HOME/cyclonedds.xml
+
 # if in 18.04
 source /opt/ros/galactic/setup.bash
 # if in 20.04
 source /opt/ros/galactic-dev/setup.bash
+
+# select a rmw
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+export RMW_IMPLEMENTATION=rmw_fastrtps_dynamic_cpp
+export RMW_IMPLEMENTATION=rmw_ecal_dynamic_cpp
 
 # rm -rf /opt/ros/galactic and rebuild if encounter any source issues
 ros2 run demo_nodes_cpp talker
