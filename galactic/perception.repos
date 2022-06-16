@@ -8,14 +8,14 @@ repositories:
     type: git
     url: https://github.com.cnpmjs.org/ros-perception/pcl_msgs.git
     version: ros2
-  RoboSense-LiDAR/rslidar_msg:
-    type: git
-    url: https://github.com.cnpmjs.org/RoboSense-LiDAR/rslidar_msg.git
-    version: master
-  RoboSense-LiDAR/rslidar_sdk:
-    type: git
-    url: https://github.com.cnpmjs.org/RoboSense-LiDAR/rslidar_sdk.git
-    version: release
+  # RoboSense-LiDAR/rslidar_msg:
+  #   type: git
+  #   url: https://github.com.cnpmjs.org/RoboSense-LiDAR/rslidar_msg.git
+  #   version: master
+  # RoboSense-LiDAR/rslidar_sdk:
+  #   type: git
+  #   url: https://github.com.cnpmjs.org/RoboSense-LiDAR/rslidar_sdk.git
+  #   version: release
     # submodule update
   # ros-perception/vision_opencv:
   #   type: git
