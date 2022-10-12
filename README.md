@@ -180,6 +180,14 @@ tar -zcvf  ./build-cache-x86-galactic.tar.gz $HOME/.colcon/build/x86_64/galactic
 tar -zcvf  ./build-cache-aarch64-galactic.tar.gz $HOME/.colcon/build/aarch64/galactic/
 ```
 
+for humble release
+
+```sh
+cd ./humble
+# vcs import src < ros2.repos
+vcs import --force src < ./ros2.repos
+```
+
 ## update and compile
 
 - replace `github.com.cnpmjs.org` with `hub.fastgit.xyz`

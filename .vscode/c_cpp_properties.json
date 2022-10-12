@@ -1,0 +1,117 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "/usr/include",
+                "/usr/local/include",
+                "${workspaceRoot}"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include",
+                    "${workspaceRoot}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ]
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "/usr/include",
+                "/usr/local/include",
+                "${workspaceRoot}"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "/usr/include",
+                    "/usr/local/include",
+                    "${workspaceRoot}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "D:/Program Files (x86)/Microsoft Visual Studio 10.0/VC/include/*",
+                "C:/Program Files (x86)/Windows Kits/8.1/Include/um",
+                "C:/Program Files (x86)/Windows Kits/8.1/Include/shared",
+                "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt",
+                "${workspaceRoot}",
+                "${workspaceFolder}/galactic/src/ros2/rmw_dds_common/rmw_dds_common/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "browse": {
+                "path": [
+                    "D:/Program Files (x86)/Microsoft Visual Studio 10.0/VC/include/*",
+                    "C:/Program Files (x86)/Windows Kits/8.1/Include/um",
+                    "C:/Program Files (x86)/Windows Kits/8.1/Include/shared",
+                    "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt",
+                    "${workspaceRoot}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "configurationProvider": "vector-of-bool.cmake-tools",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+        },
+        {
+            "name": "MinGW-64",
+            "includePath": [
+                "${workspaceRoot}",
+                "D:\\usr\\LLVM\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include",
+                "D:\\usr\\LLVM\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include-fixed",
+                "D:\\usr\\LLVM\\include",
+                "D:\\usr\\LLVM\\opt\\include",
+                "D:\\usr\\LLVM\\x86_64-w64-mingw32\\include",
+                "${workspaceFolder}/galactic/src/ros2/rclcpp/rclcpp/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "__GNUC__=8",
+                "__cdecl=__attribute__((__cdecl__))"
+            ],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "D:\\usr\\LLVM\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include",
+                    "D:\\usr\\LLVM\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\c++",
+                    "D:\\usr\\LLVM\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\c++\\debug",
+                    "D:\\usr\\LLVM\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\c++\\x86_64-w64-mingw32",
+                    "D:\\usr\\LLVM\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\c++\\x86_64-w64-mingw32\\bits",
+                    "D:\\usr\\LLVM\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include-fixed",
+                    "D:\\usr\\LLVM\\include",
+                    "D:\\usr\\LLVM\\opt\\include",
+                    "D:\\usr\\LLVM\\lib",
+                    "D:\\usr\\LLVM\\libexec",
+                    "D:\\usr\\LLVM\\opt\\lib",
+                    "D:\\usr\\LLVM\\opt\\share",
+                    "D:\\usr\\LLVM\\x86_64-w64-mingw32\\lib",
+                    "${workspaceRoot}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        }
+    ],
+    "version": 4
+}

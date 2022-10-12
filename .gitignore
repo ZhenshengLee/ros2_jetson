@@ -2,6 +2,7 @@ build/
 install/
 log/
 colcon/
-common/src
+*/src/
 .dev_bash_hist
 *.tar.gz
+_gsdata_/
