@@ -184,8 +184,8 @@ for humble release
 
 ```sh
 cd ./humble
-# vcs import src < ros2.repos
-vcs import --force src < ./ros2.repos
+# vcs import src < ros2-dev.repos
+vcs import --force src < ./ros2-dev.repos
 ```
 
 ## update and compile
